@@ -84,14 +84,14 @@ p {
 }
 
 @media screen and (max-width: 479px) {
+  
   .container {
-    width: 100vw;
-    height: 100vw;
-    padding: 4%;
+    width: 75vw;
+    height: 75vw;
+    padding: 3%;
   }
   .body {
-    font-size: 8.8vw;
-    line-height: 9.2vw;
+    font-size: 6.6vw;
+    line-height: 6.9vw;
   }
 }
-
