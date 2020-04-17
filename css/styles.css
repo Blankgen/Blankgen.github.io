@@ -58,10 +58,26 @@ p {
   flex: 0 0 auto;
 }
 
+.button-wrap {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: solid 2px;
+
+  width: 100%;
+  bottom: 0px;
+}
+
 #button {
   margin: 34px auto;
   text-decoration: underline;
   cursor: pointer;
+}
+
+#button:hover {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 991px) {
