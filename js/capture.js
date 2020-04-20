@@ -1,22 +1,14 @@
-document.getElementById("button").addEventListener("click", function() {
-    html2canvas(container).then(function(canvas){
-        saveAs(canvas.toDataURL(), 'blank.png')
-    })
+let containerWidth = container.offsetWidth
+
+window.addEventListener("resize", () => {
+    containerWidth = container.offsetWidth
 })
 
-function saveAs(url, filename) {
-    var link = document.createElement('a');
-
-    if (typeof link.download === 'string') {
-
-        link.href = url;
-        link.download = filename;
-
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-
-    } else {
-        window.open(url);
-    }
-}
+document.getElementById("button").addEventListener("click", function() {
+    html2canvas(container, {scale:1000/containerWidth}).then(function(canvas){
+        var a = document.createElement('a');
+        a.href = canvas.toDataURL("blank.png");
+        a.download = 'myfile.png';
+        a.click();
+    })
+})
